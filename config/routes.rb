@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'cart/index'
-
-  resources :products
   root 'page#home'
 
   get 'page/about'
@@ -9,6 +6,8 @@ Rails.application.routes.draw do
   get 'page/faqs'
 
   get 'page/contact'
+
+  get 'cart/index'
 
   # The priority is based upon order of creation: first created -> highest
   # priority.

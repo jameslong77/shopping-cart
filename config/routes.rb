@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :products
+
   root 'page#home'
 
   get 'page/about'
@@ -9,6 +12,10 @@ Rails.application.routes.draw do
   get 'page/contact'
 
   get 'cart/index'
+
+  devise_scope :user do
+   get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   # The priority is based upon order of creation: first created -> highest
   # priority.
